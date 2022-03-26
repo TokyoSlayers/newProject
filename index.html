@@ -54,10 +54,35 @@
         /*
             https://api.instagram.com/oauth/authorize
             ?client_id=687197956047237
-            &redirect_uri=https://127.0.0.1:5500/newProject/auth.html
+            &redirect_uri=https://tokyoslayers.github.io/newProject/auth.html
             &scope=user_profile,user_media
             &response_type=code
         */
+        var files = {
+            'client_id': '687197956047237',
+            'client_secret': 'bf052c453a3317584a073a25210480ae',
+            'grant_type': 'authorization_code',
+            'redirect_uri': 'https://tokyoslayers.github.io/newProject/auth.html',
+            'code': 'AQCvzT3trd-xP8xu77mSd2_s-MbxA3txrtBu09g_BERyR_k2O5R-d1jNXDrWw7flAeGUalTubOLccjv8a6S8Ty_RfTn1HiaijHtmIlE6t3OjlAYpbCKUkaldLdreZhaYU7u0qPKXY9Io7vGN890u-jQHCTjkmMlyuJ6ACssNNlAUCg9s69x5ZzeL0yLd7Q5hdaqBMiaByojt1AzHizRHK54vikeBtTxcjjJz4X6uRUthuw',
+        }
+
+        $.ajax({
+            url: "https://api.instagram.com/oauth/access_token",
+            beforeSend: function(xhr) { 
+            xhr.setRequestHeader("Authorization", "Basic " + btoa("username:password")); 
+            },
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/json',
+            processData: false,
+            data: files,
+            success: function (data) {
+            alert(JSON.stringify(data));
+            },
+            error: function(){
+            alert("Cannot get data");
+            }
+        });
     </script>
 
 </html>
