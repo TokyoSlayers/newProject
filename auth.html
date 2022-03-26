@@ -8,9 +8,9 @@
     </head>
 
     <body>
-        <form action="" method="post">
+        <!--<form action="" method="post">
             <input type="hidden" id="instagram"/>
-        </form>
+        </form>-->
     </body>
 
 
@@ -18,11 +18,14 @@
 
     <script>
         var code = new URLSearchParams(window.location.search).getAll('code');
-        var localhost = "http://127.0.0.1:5500";
+        /*var localhost = "http://127.0.0.1:5500";
 
         $('#instagram').val(code);
         $('form').submit(function(){
             $(this).action = localhost;
-        });
+        });*/
+        
+        localStorage.setItem('insta', code);
+        window.localStorage = "index.html";
     </script>
 </html>
