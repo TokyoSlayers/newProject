@@ -1,6 +1,16 @@
+
+<form action="" method="post">
+    <input type="hidden" id="instagram"/>
+</form>
+
 <script src="../assets/js/jquery.js"></script>
+
 <script>
     var code = new URLSearchParams(window.location.search).getAll('code');
-    localStorage.setItem('insta', code);
-    window.location = "../";
+    var localhost = "http://127.0.0.1:5500";
+
+    $('#instagram').val(code);
+    $('form').submit(function(){
+        $(this).action = localhost;
+    });
 </script>
