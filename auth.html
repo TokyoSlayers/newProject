@@ -1,16 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Auth</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
 
-<form action="" method="post">
-    <input type="hidden" id="instagram"/>
-</form>
+    <body>
+        <form action="" method="post">
+            <input type="hidden" id="instagram"/>
+        </form>
+    </body>
 
-<script src="../assets/js/jquery.js"></script>
 
-<script>
-    var code = new URLSearchParams(window.location.search).getAll('code');
-    var localhost = "http://127.0.0.1:5500";
+    <script src="assets/js/jquery.js"></script>
 
-    $('#instagram').val(code);
-    $('form').submit(function(){
-        $(this).action = localhost;
-    });
-</script>
+    <script>
+        var code = new URLSearchParams(window.location.search).getAll('code');
+        var localhost = "http://127.0.0.1:5500";
+
+        $('#instagram').val(code);
+        $('form').submit(function(){
+            $(this).action = localhost;
+        });
+    </script>
+</html>
